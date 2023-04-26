@@ -1,0 +1,27 @@
+<project default="retrieve">
+  <property environment="env" />
+  <target name="init-ivy">
+    <path id="ivy.lib.path">
+      <fileset dir="${env.ANT_HOME}/lib" includes="*.jar" />
+    </path>
+    <taskdef resource="org/apache/ivy/ant/antlib.xml"
+    uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
+    <taskdef name="ivy-configure"
+    classname="org.apache.ivy.ant.IvyConfigure"
+    classpathref="ivy.lib.path" />
+    <taskdef name="ivy-resolve"
+    classname="org.apache.ivy.ant.IvyResolve"
+    classpathref="ivy.lib.path" />
+    <taskdef name="ivy-retrieve"
+    classname="org.apache.ivy.ant.IvyRetrieve"
+    classpathref="ivy.lib.path" />
+    <taskdef name="ivy-publish"
+    classname="org.apache.ivy.ant.IvyPublish"
+    classpathref="ivy.lib.path" />
+  </target>
+  <target name="retrieve" depends="init-ivy"
+  xmlns:ivy="antlib:org.apache.ivy.ant">
+    <ivy:settings file="ivysettings.xml" />
+    <ivy-retrieve pathid="foo" />
+  </target>
+</project>
