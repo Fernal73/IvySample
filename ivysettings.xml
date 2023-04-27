@@ -1,6 +1,7 @@
-<ivysettings>&#160;
-<caches defaultCacheDir="${user.home}/.ivy2/cache" />&#160;
-<settings defaultResolver="public" />&#160;
-<resolvers>&#160; &#160;
-<ibiblio name="public"
-m2compatible="true" />&#160;</resolvers></ivysettings>
+<ivysettings>
+  <caches defaultCacheDir="${user.home}/.ivy2/cache" />
+  <settings defaultResolver="public" />
+  <resolvers>
+    <ibiblio name="public" m2compatible="true" />
+  </resolvers>
+</ivysettings>
